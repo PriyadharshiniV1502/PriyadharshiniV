@@ -1,0 +1,19 @@
+def process_sales():
+    total_shoes = int(input())
+    available_sizes = list(map(int, input().split()))
+    num_requests = int(input())
+    inventory = {size: 0 for size in available_sizes}
+    for size in available_sizes:
+        inventory[size] += 1
+
+    total_revenue = 0
+    for _ in range(num_requests):
+        size, price = map(int, input().split())
+        if size in inventory and inventory[size] > 0:
+            total_revenue += price
+            inventory[size] -= 1
+
+    print(total_revenue)
+
+if __name__ == "__main__":
+    process_sales()
