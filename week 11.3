@@ -1,0 +1,15 @@
+def perform_operations():
+    try:
+        num1 = float(input())
+        num2 = float(input())
+        division_result = num1 / num2
+        modulo_result = int(num1) % int(num2)  # Convert inputs to integers for modulo operation
+        print("Division result:", division_result)
+        print("Modulo result:", modulo_result)
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+    except ZeroDivisionError:
+        print("Error: Cannot divide or modulo by zero.")
+
+if __name__ == "__main__":
+    perform_operations()
